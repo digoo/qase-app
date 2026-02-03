@@ -6,10 +6,7 @@
   "main": "main.js",
   "author": {
     "name": "Rodz",
-    "email": "[EMAIL_ADDRESS]"
-  },
-  "publish": {
-    "provider": "github",
+    "email": "6975563+digoo@users.noreply.github.com"
   },
   "scripts": {
     "start": "electron .",
@@ -21,6 +18,9 @@
   "build": {
     "appId": "com.qase.app",
     "productName": "Qase",
+    "publish": {
+      "provider": "github"
+    },
     "directories": {
       "output": "dist"
     },
