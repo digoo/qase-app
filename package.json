@@ -21,7 +21,7 @@
     "productName": "Qase",
     "publish": {
       "provider": "github",
-      "releaseType": "prerelease"
+      "releaseType": "release"
     },
     "directories": {
       "output": "dist"

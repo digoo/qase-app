@@ -63,6 +63,8 @@ If you see a message like:
 
 > “App can’t be opened because Apple cannot check it for malicious software”
 
+> “Qase.app” is damaged and can’t be opened. You should move it to the Trash.
+
 ## Option 1: Open via Finder (recommended)
 
 1. Open Finder
