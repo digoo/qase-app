@@ -67,13 +67,3 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run build
-
-      - name: Upload release assets
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ needs.create-release.outputs.upload_url }}
-          asset_path: ./dist/Qase Setup ${GITHUB_REF_NAME}.exe
-          asset_name: Qase Setup ${GITHUB_REF_NAME}.exe
-          asset_content_type: application/octet-stream
