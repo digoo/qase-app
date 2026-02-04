@@ -34,7 +34,7 @@ jobs:
       - name: Build Electron app
         run: |
           if [ "$RUNNER_OS" = "Linux" ]; then
-            xvfb-run --auto-servernum npm run build
+            xvfb-run --auto-servernum npm run build:ci
           else
-            npm run build
+            npm run build:ci
           fi
