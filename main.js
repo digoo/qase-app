@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import Store from 'electron-store';
 import { exec } from 'child_process';
 import { promisify } from 'util';
+import { initAutoUpdater } from './updater.js';
 
 const execAsync = promisify(exec);
 const store = new Store();
@@ -224,6 +225,11 @@ function setupMenu() {
 
 app.whenReady().then(() => {
   createWindow();
+
+  // auto-update só em produção
+  if (!process.env.ELECTRON_IS_DEV) {
+    initAutoUpdater()
+  }
 
   mainWindow.webContents.on('did-finish-load', () => {
   console.log('[Main] Page loaded');
