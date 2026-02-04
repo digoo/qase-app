@@ -1,5 +1,9 @@
 name: Build and Release Electron App
 
+permissions:
+  contents: write
+  packages: write
+
 on:
   push:
     tags:
@@ -44,4 +48,4 @@ jobs:
         if: runner.os != 'Linux'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run build
+        run: npm run build:ci
