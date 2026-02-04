@@ -6,7 +6,6 @@ This project uses:
 - Electron
 - electron-builder
 - GitHub Actions for CI/CD
-- Optional integration with **1Password CLI** for secrets management
 
 ---
 
@@ -56,61 +55,6 @@ npm run build:linux
 
 Artifacts will be generated in the `dist/` folder.
 
-# Using 1Password CLI (optional but recommended)
-
-This project supports loading secrets from 1Password CLI.
-
-## Why use 1Password CLI?
-
-- No secrets committed to git
-- No .env files leaking
-- Works locally and in CI
-- One source of truth for credentials
-
-## Install 1Password CLI
-
-### macOS (recommended)
-```
-brew install --cask 1password-cli
-```
-
-
-### Verify installation:
-
-```
-op --version
-```
-
-## Sign in to 1Password CLI
-```
-op signin
-```
-
-
-Follow the browser authentication flow.
-
-After signing in, test:
-
-```
-op whoami
-```
-
-## Using secrets from 1Password
-
-Example:
-```
-op read "op://Vault Name/Item Name/field"
-```
-
-You can export environment variables like:
-```
-export QASE_API_TOKEN=$(op read "op://Vault/Qase/API_TOKEN")
-```
-
-Then run the app normally:
-```
-npm start
-```
 # macOS: App blocked by security (Gatekeeper)
 
 On macOS, the app may be blocked because it is not notarized yet.

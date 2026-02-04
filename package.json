@@ -56,7 +56,6 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "electron-chrome-extensions": "^4.9.0",
     "electron-store": "^11.0.2",
     "electron-updater": "^6.7.3"
   }
