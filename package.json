@@ -1,6 +1,6 @@
 {
   "name": "qase-app",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "type": "module",
   "description": "Qase.io Desktop App",
   "main": "main.js",
