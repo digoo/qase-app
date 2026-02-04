@@ -20,7 +20,8 @@
     "appId": "com.qase.app",
     "productName": "Qase",
     "publish": {
-      "provider": "github"
+      "provider": "github",
+      "releaseType": "prerelease"
     },
     "directories": {
       "output": "dist"
