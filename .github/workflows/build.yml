@@ -31,10 +31,10 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y xvfb libgtk-3-0 libnss3 libxss1 libasound2t64
 
-      - name: Build Electron app
-        run: |
-          if [ "$RUNNER_OS" = "Linux" ]; then
-            xvfb-run --auto-servernum npm run build:ci
-          else
-            npm run build:ci
-          fi
+      - name: Build Electron app (Linux)
+        if: runner.os == 'Linux'
+        run: xvfb-run --auto-servernum npm run build:ci
+
+      - name: Build Electron app (macOS / Windows)
+        if: runner.os != 'Linux'
+        run: npm run build:ci

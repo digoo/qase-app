@@ -34,12 +34,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y xvfb libgtk-3-0 libnss3 libxss1 libasound2t64
 
-      - name: Build Electron app
+      - name: Build Electron app (Linux)
+        if: runner.os == 'Linux'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          if [ "$RUNNER_OS" = "Linux" ]; then
-            xvfb-run --auto-servernum npm run build
-          else
-            npm run build
-          fi
+        run: xvfb-run --auto-servernum npm run build
+
+      - name: Build Electron app (macOS / Windows)
+        if: runner.os != 'Linux'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run build
