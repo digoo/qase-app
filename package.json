@@ -1,6 +1,6 @@
 {
   "name": "qase-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Qase.io Desktop App",
   "main": "main.js",
@@ -46,7 +46,13 @@
     "electron": "^28.3.3",
     "electron-builder": "^24.13.3"
   },
-  "keywords": ["qase", "desktop", "app", "test", "management"],
+  "keywords": [
+    "qase",
+    "desktop",
+    "app",
+    "test",
+    "management"
+  ],
   "license": "ISC",
   "dependencies": {
     "electron-chrome-extensions": "^4.9.0",
