@@ -6,10 +6,11 @@ on:
       - "v*"
 
 jobs:
-  build:
+  release:
     concurrency:
       group: release-${{ github.ref }}
       cancel-in-progress: false
+
     strategy:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
@@ -17,11 +18,9 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
@@ -44,9 +43,3 @@ jobs:
           else
             npm run build
           fi
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: qase-${{ matrix.os }}
-          path: dist/**
