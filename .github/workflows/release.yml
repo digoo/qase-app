@@ -11,10 +11,6 @@ on:
 
 jobs:
   release:
-    concurrency:
-      group: release-${{ github.ref }}
-      cancel-in-progress: false
-
     strategy:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
